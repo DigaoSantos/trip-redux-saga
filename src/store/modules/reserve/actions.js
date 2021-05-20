@@ -1,6 +1,13 @@
-export function addReserve(trip){
+export function addReserveRequest(id){
     return { //função do redux para enviar objeto
-        type: 'ADD_RESERVE',
+        type: 'ADD_RESERVE_REQUEST',
+        id
+    }
+}
+
+export function addReserveSuccess(trip){
+    return { //função do redux para enviar objeto
+        type: 'ADD_RESERVE_SUCCESS',
         trip
     }
 }
@@ -12,9 +19,17 @@ return {
     }
 }
 
-export function updateAmountReserve(id, amount){
+export function updateAmountRequest(id, amount){
     return {
-        type: 'UPDATE_RESERVE',
+        type: 'UPDATE_RESERVE_REQUEST',
+        id,
+        amount
+    }
+}
+
+export function updateAmountSuccess(id, amount){
+    return {
+        type: 'UPDATE_RESERVE_SUCCESS',
         id,
         amount
     }
